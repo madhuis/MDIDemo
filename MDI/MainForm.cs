@@ -38,5 +38,53 @@ namespace MDI
         {
             this.LayoutMdi(MdiLayout.TileVertical);
         }
+
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(this.ActiveMdiChild != null)
+            {
+                var childForm = (ChildForm)this.ActiveMdiChild;
+                //childForm.richTextBox1.
+                childForm.DocumentTextBox.Undo();
+
+
+            }
+        }
+
+        private void redoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(this.ActiveMdiChild != null)
+            {
+                var childForm = (ChildForm)this.ActiveMdiChild;
+                childForm.DocumentTextBox.Redo();
+            }
+        }
+
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                var childForm = (ChildForm)this.ActiveMdiChild;
+                childForm.DocumentTextBox.Cut();
+            }
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                var childForm = (ChildForm)this.ActiveMdiChild;
+                childForm.DocumentTextBox.Copy();
+            }
+        }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                var childForm = (ChildForm)this.ActiveMdiChild;
+                childForm.DocumentTextBox.Paste();
+            }
+        }
     }
 }
