@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace MDI
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var childForm = new ChildForm();
+            childForm.MdiParent = this;
+            childForm.Show();
         }
     }
 }
